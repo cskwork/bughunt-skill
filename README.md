@@ -15,7 +15,7 @@ Unit tests and a fresh-game autoplay pass can both be green while a real player 
 4. On failure: save seed + action log + screenshot + state dump → minimise → regression test → root-cause fix → replay the whole matrix.
 5. Stop when every persona × seed passes twice in a row; report the evidence.
 
-Adapters: **Godot** (in-game QA runner driven by command-line flags), **native iOS** (XCUITest / Maestro), **web** (Playwright). Templates for personas, invariants, failure reports, and a per-project `.bughunt.md` override are included. Worked examples: [`examples/transition-misses.md`](examples/transition-misses.md).
+Adapters: **Godot** (in-game QA runner driven by command-line flags), **native iOS** (XCUITest / Maestro), **web** (Playwright). App profiles fit the personas and oracles to the product: **game**, **CRUD app** (records, forms, accounts: double submit, drafts, Korean IME Enter, two sessions, data isolation), **AI chat** (streaming, stop, conversation switching, safe rendering of model output, with a scripted model stub), and **media** (recording, playback, permissions, audio interruptions). Templates for personas, invariants, failure reports, and a per-project `.bughunt.md` override are included. Worked examples: [`examples/transition-misses.md`](examples/transition-misses.md).
 
 ## Install
 
@@ -36,7 +36,7 @@ Then ask your agent to "run bughunt" before a release candidate, after a big fea
 | `adapters/` | Godot, native iOS, web |
 | `templates/` | Persona, invariants, failure report, project override |
 | `examples/transition-misses.md` | Three real transition misses, generalised |
-| `references.md` | Sources (monkey testing, stateful property testing, deterministic replay, game QA bots, tool docs) |
+| `references/` | App profiles (`game`, `crud-app`, `ai-chat`, `media`) and `sources.md` (monkey testing, stateful property testing, deterministic replay, game QA bots, tool docs) |
 
 Also part of the skill collection [cskwork/skills](https://github.com/cskwork/skills).
 
